@@ -36,6 +36,7 @@ export class AuthService {
     .map(res => res.json());
 
     login.subscribe(data => {
+      this.isLoggedIn = true;
       this.auth.next({
         username: values.username,
         token: data.token
@@ -44,7 +45,6 @@ export class AuthService {
         username: values.username,
         token: data.token
       }));
-      this.isLoggedIn = true;
     });
 
     return login;

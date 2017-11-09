@@ -43,6 +43,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(values)
     .subscribe(r => {
       console.log(r);
+      this.authService.isLoggedIn = true;
       this.router.navigate(['/apps']);
     });
   }

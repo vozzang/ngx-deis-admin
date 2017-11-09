@@ -29,4 +29,15 @@ export class UsersService {
     .map(res => res.json());
   }
 
+  createUser(values) {
+    const register = this.http.post(`http://deis.${environment.deis.cluster}/${environment.deis.apiVersion}/auth/register/`, {
+      username: values.username,
+      email: values.email,
+      password: values.password
+    })
+    .map(res => res.json());
+
+    return register;
+  }
+
 }

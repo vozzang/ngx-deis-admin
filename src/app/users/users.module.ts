@@ -46,6 +46,9 @@ import { UsersCreateComponent } from './users-create/users-create.component';
     ChangePasswordComponent,
     UsersCreateComponent
   ],
+  entryComponents: [
+    UsersCreateComponent
+  ],
   providers: [
     UsersService
   ]

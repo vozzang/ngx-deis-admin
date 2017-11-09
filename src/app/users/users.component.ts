@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 
 import { UsersService } from './users.service';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { MatDialog } from '@angular/material';
+
+import { UsersCreateComponent } from './users-create/users-create.component';
 
 import * as moment from 'moment';
 
@@ -19,7 +22,8 @@ export class UsersComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private userService: UsersService
+    private userService: UsersService,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit() {
@@ -54,6 +58,21 @@ export class UsersComponent implements OnInit {
   }
 
   openDialog() {
+    const dialogRef = this.dialog.open(UsersCreateComponent, {
+      width: '500px'
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed' + result);
+      if (result !== 'cancel') {
+        /*
+        this.userService.createUser(result)
+        .subscribe(r => {
+          console.log(r);
+          this.router.navigate(['/apps', r.id]);
+        });
+        */
+      }
+    });
   }
 }
