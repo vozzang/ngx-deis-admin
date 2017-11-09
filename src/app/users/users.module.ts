@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -23,6 +24,8 @@ import { UsersCreateComponent } from './users-create/users-create.component';
 
 @NgModule({
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     SharedModule,
     UsersRoutingModule,
     MatFormFieldModule,

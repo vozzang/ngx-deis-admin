@@ -23,4 +23,10 @@ export class UsersService {
     .map(res => res.json());
   }
 
+  changePassword(values) {
+    const url = this.apiAppsUrl + 'auth/passwd';
+    return this.http.post(url, {password: values.password, new_password: values.new_password}, { headers: this.headers })
+    .map(res => res.json());
+  }
+
 }
