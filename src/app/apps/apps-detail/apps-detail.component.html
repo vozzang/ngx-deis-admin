@@ -1,0 +1,28 @@
+<app-header></app-header>
+<mat-toolbar *ngIf="app" class="apps-detail-toolbar">
+  <span>
+    {{app.id}}
+  </span>
+  <span class="date">
+    <mat-icon>access_time</mat-icon>
+    {{app.created}}
+  </span>
+  <span class="owner">
+    <mat-icon>person</mat-icon>
+    {{app.owner}}
+  </span>
+  <span class="toolbar-spacer"></span>
+  <button mat-icon-button color="warn">
+    <mat-icon (click)="deleteApp()">delete_forever</mat-icon>
+  </button>
+</mat-toolbar>
+<nav mat-tab-nav-bar>
+  <a mat-tab-link
+      *ngFor="let link of appsDetailLinks"
+      [routerLink]="link.path"
+      routerLinkActive #rla="routerLinkActive"
+      [active]="rla.isActive">
+    {{link.label}}
+  </a>
+</nav>
+<router-outlet></router-outlet>

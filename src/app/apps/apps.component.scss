@@ -1,0 +1,23 @@
+.table-filter-form {
+  padding: 15px 25px;
+  background-color: #f0f0f0;
+}
+.icon-docker {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url(../../assets/img/icons/docker.png) no-repeat center center;
+  background-size: 100% auto;
+}
+.icon-web {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url(../../assets/img/icons/web.png) no-repeat center center;
+  background-size: 100% auto;
+}
+.mat-cell:nth-child(1),
+.mat-header-cell:nth-child(1),
+{
+flex: 0 0 5%;
+}

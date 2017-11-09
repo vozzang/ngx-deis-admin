@@ -1,0 +1,24 @@
+<div class="login-bg"></div>
+<div class="login-page">
+  <div class="login-card">
+    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+      <div class="login-card-header">
+        <div class="logo">
+          DEIS Admin
+        </div>
+      </div>
+      <div class="login-card-body">
+        <mat-form-field class="login-form-full-width">
+          <input type="text" formControlName="username" matInput placeholder="username">
+        </mat-form-field>
+        <mat-form-field class="login-form-full-width">
+          <input type="password" formControlName="password" matInput placeholder="password">
+        </mat-form-field>
+        <button [disabled]="!form.valid" type="submit" mat-raised-button color="primary" style="width: 100%;">login</button>
+      </div>
+    </form>
+    <div class="login-card-footer">
+      <button type="button" mat-button color="primary" (click)="openRegister()">register</button>
+    </div>
+  </div>
+</div>

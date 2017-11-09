@@ -1,0 +1,45 @@
+.login-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.login-form-full-width {
+  width: 100%;
+}
+
+.login-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #3f51b5;
+}
+.login-card {
+  position: absolute;
+  top: 50%;
+  width: 300px;
+  left: 50%;
+  background: #fff;
+  border-radius: 3px;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px rgba(0,0,0,.3);
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+.login-card-header {
+  padding: 40px 30px 20px 30px;
+  text-align: center;
+  color: #586b77;
+  font-size: 24px;
+}
+.login-card-body {
+  padding: 0 30px 40px 30px;
+}
+.login-card-footer {
+  padding: 20px 30px;
+  background: #f7f9fb;
+  text-align: center;
+}

@@ -1,0 +1,34 @@
+<app-header></app-header>
+<div class="table-filter-form">
+  <mat-form-field style="width: 100%;">
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+</div>
+
+<mat-table [dataSource]="dataSource" matSort>
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> id </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="owner">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> owner </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.owner}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="public">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> public </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.public}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="created">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> created </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.created}} </mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;">
+  </mat-row>
+</mat-table>
+
+<!-- <mat-paginator [pageSizeOptions]="[20, 30, 50, 100]"></mat-paginator> -->
+
+<button mat-fab style="position: fixed; bottom: 20px; right: 20px;">
+  <mat-icon (click)="openDialog()">add</mat-icon>
+</button>

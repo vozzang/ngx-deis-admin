@@ -1,0 +1,27 @@
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+.apps-detail-toolbar {
+  .date {
+    margin-left: 25px;
+    font-size: 14px;
+    .material-icons {
+      margin-top: 2px;
+      margin-right: -5px;
+      font-size: 18px;
+      color: #999;
+      vertical-align: middle;
+    }
+  }
+  .owner {
+    margin-left: 25px;
+    font-size: 14px;
+    .material-icons {
+      margin-top: 2px;
+      margin-right: -5px;
+      font-size: 18px;
+      color: #999;
+      vertical-align: middle;
+    }
+  }
+}
