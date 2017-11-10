@@ -69,6 +69,13 @@ export class AppsService {
     return this.http.post(url, {id: id}, { headers: this.headers })
     .map(res => res.json());
   }
+  createAppConfig(id, values) {
+    const url = this.apiAppsUrl + '/' + id + '/config';
+    return this.http.post(url, {
+      values: values
+    }, { headers: this.headers })
+    .map(res => res.json());
+  }
   deleteApp(id) {
     const url = this.apiAppsUrl + '/' + id;
     return this.http.delete(url, { headers: this.headers })

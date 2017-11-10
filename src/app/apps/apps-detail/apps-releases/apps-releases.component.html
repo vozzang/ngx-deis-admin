@@ -1,7 +1,24 @@
-<div *ngFor="let item of releases">
-  {{item.version}}
-  {{item.summary}}
-  {{item.updated}}
-  {{item.failed}}
-  {{item.owner}}
-</div>
+<mat-table #table [dataSource]="dataSource">
+  <ng-container matColumnDef="version">
+    <mat-header-cell *matHeaderCellDef> version </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.version}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="summary">
+    <mat-header-cell *matHeaderCellDef> summary </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.summary}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="created">
+    <mat-header-cell *matHeaderCellDef> created </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.created}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="failed">
+    <mat-header-cell *matHeaderCellDef> failed </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.failed}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="owner">
+    <mat-header-cell *matHeaderCellDef> owner </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.owner}} </mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

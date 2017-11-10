@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { AppsService } from '../../apps.service';
+import { MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-apps-releases',
@@ -11,6 +12,8 @@ import { AppsService } from '../../apps.service';
 export class AppsReleasesComponent implements OnInit {
   id;
   releases;
+  displayedColumns = ['version', 'summary', 'created', 'failed', 'owner'];
+  dataSource: MatTableDataSource<any>;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,6 +27,7 @@ export class AppsReleasesComponent implements OnInit {
     .subscribe(r => {
       console.log(r);
       this.releases = r.results;
+      this.dataSource = new MatTableDataSource(this.releases);
     });
   }
 

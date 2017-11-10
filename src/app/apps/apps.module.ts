@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -25,12 +26,15 @@ import { AppsReleasesComponent } from './apps-detail/apps-releases/apps-releases
 import { AppsDomainsComponent } from './apps-detail/apps-domains/apps-domains.component';
 import { AppsCreateComponent } from './apps-create/apps-create.component';
 import { AppsPodsComponent } from './apps-detail/apps-pods/apps-pods.component';
+import { AppsConfigFormComponent } from './apps-detail/apps-config/apps-config-form/apps-config-form.component';
 
 
 
 @NgModule({
   imports: [
     SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppsRoutingModule,
     MatFormFieldModule,
     MatInputModule,
@@ -54,10 +58,12 @@ import { AppsPodsComponent } from './apps-detail/apps-pods/apps-pods.component';
     AppsReleasesComponent,
     AppsDomainsComponent,
     AppsCreateComponent,
-    AppsPodsComponent
+    AppsPodsComponent,
+    AppsConfigFormComponent
   ],
   entryComponents: [
-    AppsCreateComponent
+    AppsCreateComponent,
+    AppsConfigFormComponent
   ],
   providers: [
     AppsService

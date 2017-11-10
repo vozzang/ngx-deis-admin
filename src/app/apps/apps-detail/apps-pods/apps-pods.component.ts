@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { AppsService } from '../../apps.service';
+import { MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-apps-pods',
@@ -11,6 +12,8 @@ import { AppsService } from '../../apps.service';
 export class AppsPodsComponent implements OnInit {
   id;
   pods;
+  displayedColumns = ['name', 'release', 'started', 'state', 'type'];
+  dataSource: MatTableDataSource<any>;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,6 +27,7 @@ export class AppsPodsComponent implements OnInit {
     .subscribe(r => {
       console.log(r);
       this.pods = r.results;
+      this.dataSource = new MatTableDataSource(this.pods);
     });
   }
 
